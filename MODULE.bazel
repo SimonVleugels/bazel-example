@@ -1,0 +1,9 @@
+git_override(
+    module_name = "googletest",
+    remote = "https://github.com/google/googletest",
+    commit = "I3aad27a8b725cf73163e52ef2e28e6cdfc13082b",
+)
+
+bazel_dep(name = "rules_java", version = "5.4.1")
+toolchains = use_extension("@rules_java//java:extensions.bzl", "toolchains")
+use_repo(toolchains, "local_jdk")
